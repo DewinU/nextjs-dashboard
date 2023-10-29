@@ -7,6 +7,8 @@ export default async function Page({ params }: {params: {id: string}}) {
     const invoice = await fetchInvoiceById(id);
     const customers = await fetchCustomers();
 
+    if(!invoice) return <div>Invoice not found</div>
+
   return (
     <main>
       <Breadcrumbs
