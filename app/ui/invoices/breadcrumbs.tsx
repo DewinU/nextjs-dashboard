@@ -1,20 +1,20 @@
-import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
-import { cn } from '@/app/lib/utils';
+import Link from 'next/link'
+import { lusitana } from '@/app/ui/fonts'
+import { cn } from '@/app/lib/utils'
 
 interface Breadcrumb {
-  label: string;
-  href: string;
-  active?: boolean;
+  label: string
+  href: string
+  active?: boolean
 }
 
 export default function Breadcrumbs({
   breadcrumbs,
 }: {
-  breadcrumbs: Breadcrumb[];
+  breadcrumbs: Breadcrumb[]
 }) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 block">
+    <nav aria-label='Breadcrumb' className='mb-6 block'>
       <ol className={cn(lusitana.className, 'flex text-xl md:text-2xl')}>
         {breadcrumbs.map((breadcrumb, index) => (
           <li
@@ -22,15 +22,14 @@ export default function Breadcrumbs({
             aria-current={breadcrumb.active}
             className={cn(
               breadcrumb.active ? 'text-gray-900' : 'text-gray-500',
-            )}
-          >
+            )}>
             <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
             {index < breadcrumbs.length - 1 ? (
-              <span className="mx-3 inline-block">/</span>
+              <span className='mx-3 inline-block'>/</span>
             ) : null}
           </li>
         ))}
       </ol>
     </nav>
-  );
+  )
 }

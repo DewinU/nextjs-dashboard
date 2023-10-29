@@ -4,6 +4,8 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
     "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
@@ -23,6 +25,8 @@
     "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
+    "eslint": "8.52.0",
+    "eslint-config-next": "14.0.0",
     "postcss": "8.4.31",
     "prettier": "^3.0.3",
     "tailwind-merge": "^1.14.0",
